@@ -14,14 +14,22 @@ is `unverified` until actually built and run on Fedora 44.
 
 | Iteration | Scope | Status |
 |---|---|---|
-| **r00** | Scaffold: site (lgtm-jekyll), outline, this plan, the `examples/_template/` C++ toolchain (lgtm-cpp: CMake presets + Conan + gtest/gmock + sanitizer lanes), `scripts/check-prereqs.sh`, hub card | in progress |
-| **r01** | Part 0 + Part 1 — Ch0 Setup, Ch1 Why test / toolchain, Ch2 first test (CTest + `gtest_discover_tests`), Ch3 assertions vs expectations, Ch4 fixtures | planned |
-| **r02** | Part 2 — Ch5 parameterized & typed, Ch6 death tests / exceptions / `std::expected`, Ch7 modern C++20/23 (concepts, ranges, coroutines) | planned |
-| **r03** | Part 3 — Ch8 GoogleMock fundamentals, Ch9 advanced mocking & testability | planned |
-| **r04** | Part 4 — Ch10 threaded code, Ch11 races & memory bugs (TSan/ASan/UBSan), Ch12 deterministic & stress testing / flaky-test hunting | planned |
-| **r05** | Part 5 — Ch13 debugging with GDB, Ch14 coverage (llvm-cov), Ch15 CI & reproducible test runs (two-pass sanitizer matrix) | planned |
+| **r00** | Scaffold: site (lgtm-jekyll), outline, this plan, the `examples/_template/` C++ toolchain (lgtm-cpp: CMake presets + Conan + gtest/gmock + sanitizer lanes), `scripts/check-prereqs.sh`, hub card | merged (PR #1 + hub card PR #45) |
+| **r01** | Part 0 + Part 1 — Ch1 Setup, Ch2 Why test / toolchain, Ch3 first test (CTest + `gtest_discover_tests`), Ch4 assertions vs expectations, Ch5 fixtures | in progress |
+| **r02** | Part 2 — Ch6 parameterized & typed, Ch7 death tests / exceptions / `std::expected`, Ch8 modern C++20/23 (concepts, ranges, coroutines) | planned |
+| **r03** | Part 3 — Ch9 GoogleMock fundamentals, Ch10 advanced mocking & testability | planned |
+| **r04** | Part 4 — Ch11 threaded code, Ch12 races & memory bugs (TSan/ASan/UBSan), Ch13 deterministic & stress testing / flaky-test hunting | planned |
+| **r05** | Part 5 — Ch14 debugging with GDB, Ch15 coverage (llvm-cov), Ch16 CI & reproducible test runs (two-pass sanitizer matrix) | planned |
 | **r06** | Polish — diagram audit, `manuscript/` + `build-manuscript.py` (Leanpub), idiomatic-review + professional-voice passes, flip verification footers to `verified` | planned |
 | **r07** | Companion conference deck (60-minute cut), built last from finished chapters | planned |
+
+## r01 progress
+
+- `examples/_template/` verified on Fedora 44: `./demo.sh test`, `asan`, `tsan` all 4/4 from clean. (Clang 22.1.8, CMake 4.3.0, Ninja 1.13.2, Conan 2.33.0, GoogleTest 1.18.0.)
+- Outline renumbered to the 1-based scheme (outline order 0 = Overview; content chapters = Chapter 1-16; Setup = Chapter 1).
+- **Ch1 Setup** (`_docs/01-setup.md`) authored + Figure 1.1 (`assets/diagrams/01-build-and-test-loop`), footer `verified` (check-prereqs output + `_template` 4/4 captured here). No `examples/01-*` dir (setup points at `examples/_template`, mirroring the sibling prereqs chapter).
+- Fixed a rule-14 leak: `_layouts/part_index.html` empty-state linked `/plans/iteration-plan/` ("roadmap"); now links the published chapters index.
+- **Next:** Ch2-5, each with a runnable example (copy of `_template`, built + verified on default/asan/tsan) and a paired figure.
 
 ## Decisions carried into every iteration
 
