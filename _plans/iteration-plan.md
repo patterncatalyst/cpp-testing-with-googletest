@@ -29,7 +29,8 @@ is `unverified` until actually built and run on Fedora 44.
 - Outline renumbered to the 1-based scheme (outline order 0 = Overview; content chapters = Chapter 1-16; Setup = Chapter 1).
 - **Ch1 Setup** (`_docs/01-setup.md`) authored + Figure 1.1 (`assets/diagrams/01-build-and-test-loop`), footer `verified` (check-prereqs output + `_template` 4/4 captured here). No `examples/01-*` dir (setup points at `examples/_template`, mirroring the sibling prereqs chapter).
 - Fixed a rule-14 leak: `_layouts/part_index.html` empty-state linked `/plans/iteration-plan/` ("roadmap"); now links the published chapters index.
-- **Next:** Ch2-5, each with a runnable example (copy of `_template`, built + verified on default/asan/tsan) and a paired figure.
+- **Ch2 Why test / toolchain** (`_docs/02-why-test-and-the-toolchain.md`) authored + Figure 2.1 (`02-test-target-wiring`), footer `verified`. Walks the `_template` wiring (conanfile pin + generators, strict-flags INTERFACE libs, the `unit_tests` target, `gtest_discover_tests`); demonstrates a caught regression (break round-up -> 2/4 red -> revert) and a `--gtest_list_tests` cross-check, both run here and quoted path-relative (host paths scrubbed). No `examples/02-*` dir (dissects `examples/_template`).
+- **Next:** Ch3 (Your first test) creates the first fresh `examples/03-first-test` from `_template`; then Ch4 assertions, Ch5 fixtures, each built + verified on default/asan/tsan with a paired figure.
 
 ## Decisions carried into every iteration
 
