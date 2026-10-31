@@ -34,3 +34,7 @@ CheckOptions:
     value: lower_case
   - key: readability-identifier-naming.ConstantCase
     value: lower_case
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumConstantCase
+    value: CamelCase
