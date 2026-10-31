@@ -1,0 +1,76 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="container">
+    <span class="hero__eyebrow">C++20 / C++23 · GoogleTest · GoogleMock · Fedora 44</span>
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__lead">{{ site.description }}</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary"
+         href="{{ '/docs/00-outline/' | relative_url }}">Start the book →</a>
+      <a class="btn btn--secondary"
+         href="{{ '/docs/00-index/' | relative_url }}">Browse chapters</a>
+      <a class="btn btn--secondary"
+         href="https://github.com/{{ site.github_username }}/{{ site.github_repo }}"
+         rel="noopener">View on GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><span class="stat__value">🧪</span><span class="stat__label">GoogleTest + GoogleMock, built with CMake presets and Conan</span></div>
+      <div class="stat"><span class="stat__value">🧵</span><span class="stat__label">Concurrency testing as a full part, not an appendix</span></div>
+      <div class="stat"><span class="stat__value">🧹</span><span class="stat__label">A real data race caught by ThreadSanitizer, plus ASan and UBSan</span></div>
+      <div class="stat"><span class="stat__value">📈</span><span class="stat__label">llvm-cov coverage and a two-pass CI matrix, all local on Fedora 44</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-heading">What this book is</h2>
+    <p class="section-sub">
+      A chapter-based, hands-on path from an empty directory to a C++ test suite
+      that mocks its dependencies, runs clean under sanitizers, and executes in
+      CI. You build each example locally on Fedora 44 with Clang, CMake, Conan,
+      and <a href="https://google.github.io/googletest/">GoogleTest</a> and
+      GoogleMock, run it under ASan, UBSan, and ThreadSanitizer, and measure what
+      the suite exercises with llvm-cov. It assumes you can already build a C++
+      project; this is not a C++ language tutorial. Everything runs locally,
+      with no containers and no VM.
+    </p>
+
+    {%- comment -%}
+      Two-level navigation: the homepage shows one card per Part. Each Part
+      card links to its own page (the _parts collection) which lists that
+      part's chapters. New chapters appear under their part automatically;
+      new parts appear here just by adding a file to _parts/.
+    {%- endcomment -%}
+    <div class="cards">
+      {% assign parts_sorted = site.parts | sort: "order" %}
+      {% for part in parts_sorted %}
+      {% assign part_docs = site.docs | where: "part", part.part_name %}
+      <a class="card" href="{{ part.url | relative_url }}">
+        <div class="card__eyebrow">Part {{ part.order }}</div>
+        <h3 class="card__title">{{ part.title }}</h3>
+        {% if part.blurb %}
+        <p class="card__desc">{{ part.blurb }}</p>
+        {% endif %}
+        <div class="card__meta">
+          {% if part_docs.size > 0 %}
+            <span>{{ part_docs.size }} chapter{% if part_docs.size != 1 %}s{% endif %}</span>
+          {% else %}
+            <span>Coming soon</span>
+          {% endif %}
+          <span>Explore →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
