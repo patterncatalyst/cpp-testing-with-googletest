@@ -1,0 +1,23 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+
+# Ruby
+Gemfile.lock
+
+# C++ / CMake / Conan build artifacts (examples build locally)
+build/
+cmake-build-*/
+CMakeUserPresets.json
+conan.lock
+conanbuild*
+conanrun*
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
