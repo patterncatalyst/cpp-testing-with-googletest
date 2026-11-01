@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 320" font-family="'Red Hat Text', system-ui, sans-serif" role="img">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="am" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b8650a"/></marker></defs>
+<rect x="30" y="130" width="150" height="60" rx="9" fill="#fff8ef" stroke="#e8870c" stroke-width="2"/>
+<text x="105.0" y="158.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">push / PR</text>
+<text x="105.0" y="175.0" font-size="11.5" fill="#555555" text-anchor="middle">triggers CI</text>
+<rect x="360" y="40" width="260" height="46" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="490.0" y="68.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">default lane: build + ctest</text>
+<rect x="360" y="104" width="260" height="46" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="490.0" y="132.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">asan-ubsan lane (one binary)</text>
+<rect x="360" y="168" width="260" height="46" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="490.0" y="196.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">tsan lane (its own binary)</text>
+<rect x="360" y="232" width="260" height="46" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="490.0" y="260.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">coverage gate: llvm-cov</text>
+<rect x="760" y="130" width="150" height="60" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="835.0" y="158.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">all green</text>
+<text x="835.0" y="175.0" font-size="11.5" fill="#555555" text-anchor="middle">merge allowed</text>
+<path d="M180,150 L360,63" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M180,158 L360,127" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M180,166 L360,191" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M180,172 L360,255" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M620,63 L760,150" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<path d="M620,127 L760,155" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<path d="M620,191 L760,165" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<path d="M620,255 L760,172" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<text x="490" y="300" font-size="11" fill="#1d1d1d" text-anchor="middle">ASan and TSan never share a binary, so they are separate legs</text>
+</svg>
