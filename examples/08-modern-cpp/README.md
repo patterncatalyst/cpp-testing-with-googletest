@@ -1,4 +1,4 @@
-# 08-modern-cpp — concepts, ranges, and coroutines under test
+# 08-modern-cpp: concepts, ranges, and coroutines under test
 
 The example for Chapter 8. It shows how to test three C++20/23 features:
 
@@ -18,7 +18,7 @@ The example for Chapter 8. It shows how to test three C++20/23 features:
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # parcel.hpp (concept), manifest.* (ranges), batching.* (coroutines)
-└── tests/                # modern_test.cpp — static_assert, ranges, generator tests
+└── tests/                # modern_test.cpp: static_assert, ranges, generator tests
 ```
 
 ## Run it

@@ -1,4 +1,4 @@
-# 07-failure-paths — expected, exceptions, and death tests
+# 07-failure-paths: expected, exceptions, and death tests
 
 The example for Chapter 7. It shows the three ways a function reports failure and
 how each is tested:
@@ -17,7 +17,7 @@ how each is tested:
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # intake.hpp / intake.cpp
-└── tests/                # intake_test.cpp — expected, EXPECT_THROW, EXPECT_DEATH
+└── tests/                # intake_test.cpp: expected, EXPECT_THROW, EXPECT_DEATH
 ```
 
 ## Run it

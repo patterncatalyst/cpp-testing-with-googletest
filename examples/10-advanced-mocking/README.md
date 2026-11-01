@@ -1,4 +1,4 @@
-# 10-advanced-mocking — strictness, ordering, actions, and fakes
+# 10-advanced-mocking: strictness, ordering, actions, and fakes
 
 The example for Chapter 10. `shipping::BookingService` depends on two injected
 collaborators, a `CarrierGateway` and an `AuditLog`, and on success it books the
@@ -19,7 +19,7 @@ GoogleMock tools:
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target (links GTest::gmock)
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # carrier.hpp, audit.hpp (interfaces), booking_service.hpp/.cpp
-└── tests/                # booking_service_test.cpp — InSequence, Nice/StrictMock, SaveArg, a fake
+└── tests/                # booking_service_test.cpp: InSequence, Nice/StrictMock, SaveArg, a fake
 ```
 
 ## Run it

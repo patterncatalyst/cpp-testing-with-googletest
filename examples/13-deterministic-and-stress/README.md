@@ -1,4 +1,4 @@
-# 13-deterministic-and-stress — deterministic tests and stress runs
+# 13-deterministic-and-stress: deterministic tests and stress runs
 
 The example for Chapter 13. Two units are built so a test controls the source of
 nondeterminism instead of fighting it:
@@ -18,8 +18,8 @@ dependence on run order or timing.
 13-deterministic-and-stress/
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
-├── src/shipping/         # planner.hpp / planner.cpp — QuoteCache + choose_backup_carrier
-└── tests/                # planner_test.cpp — injected time, injected seed
+├── src/shipping/         # planner.hpp / planner.cpp: QuoteCache + choose_backup_carrier
+└── tests/                # planner_test.cpp: injected time, injected seed
 ```
 
 ## Run it

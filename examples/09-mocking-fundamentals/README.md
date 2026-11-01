@@ -1,4 +1,4 @@
-# 09-mocking-fundamentals — a mock stands in for a collaborator
+# 09-mocking-fundamentals: a mock stands in for a collaborator
 
 The example for Chapter 9. `shipping::Dispatcher` orchestrates a booking through a
 `shipping::CarrierGateway`: it checks the region is served, gets a quote, and books
@@ -18,7 +18,7 @@ GoogleMock double so `Dispatcher` can be tested with no network.
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target (links GTest::gmock)
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # carrier.hpp (interface), dispatcher.hpp/.cpp (unit under test)
-└── tests/                # dispatcher_test.cpp — MOCK_METHOD, EXPECT_CALL, matchers, ON_CALL
+└── tests/                # dispatcher_test.cpp: MOCK_METHOD, EXPECT_CALL, matchers, ON_CALL
 ```
 
 ## Run it
