@@ -1,0 +1,13 @@
+# Test code inherits the project .clang-tidy and relaxes two checks.
+# cppcoreguidelines-non-private-member-variables-in-classes: GoogleTest fixtures
+# expose their state as protected members so TEST_F bodies, which derive from the
+# fixture, can reach it. That is the framework's own idiom.
+# bugprone-unchecked-optional-access: a test guards a dereference with
+# ASSERT_TRUE(opt.has_value()) before reading *opt, but clang-tidy cannot model
+# that gtest ASSERT returns on failure, so it flags the guarded access. The guard
+# is the idiom this book teaches, so the check is relaxed for test code.
+# Both still apply to the shipping library under src/.
+InheritParentConfig: true
+Checks: >
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -bugprone-unchecked-optional-access
