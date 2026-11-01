@@ -25,6 +25,7 @@ it, and a README that verifies the behavior.
 | Chapter 10: Advanced mocking and testability | [`examples/10-advanced-mocking`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/10-advanced-mocking) | A `BookingService` with two injected collaborators: `InSequence` ordering, `NiceMock`/`StrictMock`, `SaveArg` capture, and a `FakeAuditLog`. |
 | Chapter 11: Testing threaded code | [`examples/11-testing-threads`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/11-testing-threads) | A thread-safe `ShipmentLedger` driven from many threads with a `std::latch` and `std::jthread`, plus `std::async` workers, asserting the aggregate. |
 | Chapter 12: Races and memory bugs | [`examples/12-sanitizers`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/12-sanitizers) | Three correct weight functions, each broken in the chapter to show UBSan (overflow), ASan (a dangling view), and TSan (a shared accumulator) catching it. |
+| Chapter 13: Deterministic and stress testing | [`examples/13-deterministic-and-stress`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/13-deterministic-and-stress) | A `QuoteCache` with injected time and a `choose_backup_carrier` with an injected seed, then stressed with `--gtest_repeat` and `--gtest_shuffle`. |
 
 Chapters 1 and 2 build on the shared `examples/_template/` scaffold rather than a
 chapter-specific example. More examples appear here as each chapter ships.
