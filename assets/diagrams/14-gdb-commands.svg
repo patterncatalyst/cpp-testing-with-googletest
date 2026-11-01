@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 376" font-family="'Red Hat Text', system-ui, sans-serif" role="img">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="am" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b8650a"/></marker></defs>
+<rect x="40" y="54" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="79.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">break fn if cond</text>
+<rect x="360" y="54" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="79.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">stop in fn only when the condition holds</text>
+<rect x="40" y="106" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="131.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">run --gtest_filter=...</text>
+<rect x="360" y="106" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="131.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">start, running just the failing test</text>
+<rect x="40" y="158" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="183.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">print expr</text>
+<rect x="360" y="158" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="183.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">show a variable or evaluate an expression</text>
+<rect x="40" y="210" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="235.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">next / step</text>
+<rect x="360" y="210" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="235.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">over the next line / into the call</text>
+<rect x="40" y="262" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="287.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">finish</text>
+<rect x="360" y="262" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="287.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">run to the end of the current function</text>
+<rect x="40" y="314" width="250" height="40" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="339.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">backtrace</text>
+<rect x="360" y="314" width="480" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="600.0" y="339.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">the call stack that reached here</text>
+<path d="M290,74 L360,74" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,126 L360,126" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,178 L360,178" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,230 L360,230" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,282 L360,282" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,334 L360,334" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<text x="165" y="36" font-size="11" fill="#1d1d1d" text-anchor="middle">command</text>
+<text x="600" y="36" font-size="11" fill="#1d1d1d" text-anchor="middle">what it does</text>
+</svg>
