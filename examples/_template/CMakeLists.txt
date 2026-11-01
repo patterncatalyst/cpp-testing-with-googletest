@@ -1,20 +1,18 @@
-# Top-level CMake build for an lgtm-cpp project.
-# C++23, warnings-as-errors, Conan-provided dependencies, sanitizer lanes,
-# clang-tidy on every compile, and a library + app + test target.
+# Template CMake build every example copies.
+# C++23, warnings-as-errors, Conan-provided GoogleTest, sanitizer lanes,
+# clang-tidy on every compile: a small library under test plus its test target.
 #
 # Build via presets (see CMakePresets.json), which consume the Conan toolchain:
 #   conan install . -of build -s build_type=Debug --build=missing
 #   cmake --preset default && cmake --build --preset default
 #   ctest --preset default --output-on-failure
 cmake_minimum_required(VERSION 3.25)
-project(shipping_demo LANGUAGES CXX)
+project(gtest_example LANGUAGES CXX)
 
 # ── Language standard: C++23, required, no compiler extensions ────────────────
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Emit compile_commands.json for clangd and clang-tidy (editors + CI read it).
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ── Options ───────────────────────────────────────────────────────────────────
@@ -54,24 +52,15 @@ if(ENABLE_CLANG_TIDY)
   endif()
 endif()
 
-# ── Dependencies, resolved from Conan's CMakeDeps ────────────────────────────
-find_package(spdlog REQUIRED)
+# ── Dependency, resolved from Conan's CMakeDeps ───────────────────────────────
 find_package(GTest REQUIRED)
 
-# ── Library under test ───────────────────────────────────────────────────────
-add_library(shipping
-  src/shipping/rate_quote.cpp)
+# ── Library under test ────────────────────────────────────────────────────────
+add_library(shipping src/shipping/rate_quote.cpp)
 target_include_directories(shipping PUBLIC src)
-target_link_libraries(shipping
-  PUBLIC  spdlog::spdlog
-  PRIVATE project_warnings project_sanitizers)
+target_link_libraries(shipping PRIVATE project_warnings project_sanitizers)
 
-# ── Application ──────────────────────────────────────────────────────────────
-add_executable(app src/main.cpp)
-target_link_libraries(app
-  PRIVATE shipping project_warnings project_sanitizers)
-
-# ── Tests ────────────────────────────────────────────────────────────────────
+# ── Tests ─────────────────────────────────────────────────────────────────────
 enable_testing()
 add_executable(unit_tests tests/rate_quote_test.cpp)
 target_link_libraries(unit_tests

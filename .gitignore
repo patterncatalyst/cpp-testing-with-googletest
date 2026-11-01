@@ -10,6 +10,7 @@ Gemfile.lock
 
 # C++ / CMake / Conan build artifacts (examples build locally)
 build/
+build-*/
 cmake-build-*/
 CMakeUserPresets.json
 conan.lock
