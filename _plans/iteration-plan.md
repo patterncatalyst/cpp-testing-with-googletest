@@ -15,8 +15,8 @@ is `unverified` until actually built and run on Fedora 44.
 | Iteration | Scope | Status |
 |---|---|---|
 | **r00** | Scaffold: site (lgtm-jekyll), outline, this plan, the `examples/_template/` C++ toolchain (lgtm-cpp: CMake presets + Conan + gtest/gmock + sanitizer lanes), `scripts/check-prereqs.sh`, hub card | merged (PR #1 + hub card PR #45) |
-| **r01** | Part 0 + Part 1 — Ch1 Setup, Ch2 Why test / toolchain, Ch3 first test (CTest + `gtest_discover_tests`), Ch4 assertions vs expectations, Ch5 fixtures | in progress |
-| **r02** | Part 2 — Ch6 parameterized & typed, Ch7 death tests / exceptions / `std::expected`, Ch8 modern C++20/23 (concepts, ranges, coroutines) | planned |
+| **r01** | Part 0 + Part 1 — Ch1 Setup, Ch2 Why test / toolchain, Ch3 first test (CTest + `gtest_discover_tests`), Ch4 assertions vs expectations, Ch5 fixtures | merged (PR #2, tag r01.0) |
+| **r02** | Part 2 — Ch6 parameterized & typed, Ch7 death tests / exceptions / `std::expected`, Ch8 modern C++20/23 (concepts, ranges, coroutines) | in progress |
 | **r03** | Part 3 — Ch9 GoogleMock fundamentals, Ch10 advanced mocking & testability | planned |
 | **r04** | Part 4 — Ch11 threaded code, Ch12 races & memory bugs (TSan/ASan/UBSan), Ch13 deterministic & stress testing / flaky-test hunting | planned |
 | **r05** | Part 5 — Ch14 debugging with GDB, Ch15 coverage (llvm-cov), Ch16 CI & reproducible test runs (two-pass sanitizer matrix) | planned |
@@ -35,6 +35,11 @@ is `unverified` until actually built and run on Fedora 44.
 - **clang-tidy config change (applies to `_template` + all examples):** disabled `bugprone-easily-swappable-parameters` (fires on every 2-arg numeric fn in a teaching book) and `cppcoreguidelines-pro-bounds-avoid-unchecked-container-access` (flags the ASSERT-guarded `[]` this book teaches). Documented in `.clang-tidy` header. **Feed back to lgtm-cpp.**
 - **Ch5 Fixtures** (`_docs/05-fixtures.md`) authored + Figure 5.1 (`05-fixture-lifecycle`), footer `verified`. New example `examples/05-fixtures` (`Manifest` class; `ManifestTest` fixture with `SetUp` + a helper; 5 TEST_F: start-state, add, fresh-fixture isolation proof, helper, throw-leaves-unchanged), verified 5/5 on all 3 lanes. Covers TEST_F, per-test lifecycle, RAII vs TearDown, SetUpTestSuite, fixture inheritance, when to use a fixture. Added `tests/.clang-tidy` (InheritParentConfig) disabling `cppcoreguidelines-non-private-member-variables-in-classes` for test code only (fixtures need protected members); still enforced in `src/`. **Feed back to lgtm-cpp.**
 - **r01 COMPLETE (Ch1-5 + examples 03/04/05 all verified).** Next: open PR `release/r01` -> main (lgtm-github: squash, delete branch, tag `r01.x`), then r02 (Part 2: Ch6-8).
+
+## r02 progress (branch `release/r02`)
+
+- **Ch6 Parameterized and typed tests** (`_docs/06-parameterized-and-typed-tests.md`) authored + Figure 6.1 (`06-parameterized-and-typed`), footer `verified`. New example `examples/06-parameterized-and-typed`: `TEST_P` over a `delivery_band` boundary table (5 rows, struct param + name generator -> `/w1`../w30001`) and `TYPED_TEST` of `clamp_non_negative<T>` over `Types<int,long,double>`; 11/11 on all 3 lanes. Covers `TestWithParam`/`GetParam`, `INSTANTIATE_TEST_SUITE_P` + generators (Values/ValuesIn/Range/Bool/Combine), typed fixtures + `this->`, type-parameterized (`TYPED_TEST_P`) as advanced, when-not-to.
+- **Next:** Ch7 (Death tests / exceptions / `std::expected`) with `examples/07-*`; note the death-test-under-ASan gotcha. Then Ch8 (modern C++20/23: concepts, ranges, coroutines). Then PR `release/r02` -> main.
 
 ## Decisions carried into every iteration
 
