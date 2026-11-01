@@ -75,7 +75,12 @@ is `unverified` until actually built and run on Fedora 44.
 - **Diagram audit:** found + fixed a real bug — Ch10 prose referenced Figure 10.2 (`10-mock-vs-fake`) but the include was never added (figure invisible on site despite existing+paired); added it, regenerated manuscript. Otherwise clean: all 26 figures referenced + paired `.excalidraw`, no chapter/part numbers or internal codes baked into any SVG, captions 10-24 words.
 - **Bibliography:** was still the scaffold placeholder while every chapter links to it. Populated with the 7 cited reference works (Myers *Art of Software Testing*, Meszaros *xUnit Test Patterns*, Feathers *Working Effectively w/ Legacy Code*, Williams *C++ Concurrency in Action*, Matloff/Salzman *Art of Debugging w/ GDB*, Scott *Professional CMake*, Winters et al. *SWE at Google*) — verified each exists, publisher links, house table format.
 - **Footers:** all 16 chapter footers already `verified` (confirmed, no change needed).
-- **Next:** PR `release/r06` -> main (tag r06.0). Then r07 companion deck (decks-last).
+- **r06 COMPLETE & MERGED** (PR #7, squash, main@08e7b65, tag `r06.0`, release published, Pages deployed).
+
+## r07 progress (branch `release/r07`) — companion deck
+
+- **Companion deck** (`presentation/deck.js` -> `cpp-testing-with-googletest.pptx`, 25 slides) built with pptxgenjs in the Red Hat house style, mined from the finished 16 chapters as a 60-minute cut. Arc: cover -> thesis (a test is only worth the behavior it pins) + toolchain -> 6 part dividers (Foundations / Beyond the basics / Mocking / Testing concurrency / Tooling) with bullet, figure, and code slides -> closing + reading-list appendix. Figures reuse the chapters' SVGs (rendered to `presentation/png/` via cairosvg @1800w). Thick speaker notes 1:1 with slides. Scaffold reused from the sibling cpp-design-patterns/presentation (deck-helpers.js, assets/, package.json, .gitignore). 0 ban-tier voice + 0 em dashes in deck.js (fixed honest/on-purpose/genuine/deliberately/load-bearing/earns-its-keep). QA: soffice->pdf->pdftoppm eyeballed cover/divider/code/figure — all on-brand (logo+page# footer, green code comments, centered diagrams). Added `presentation/` to `_config.yml` exclude. **Build needs pptxgenjs (not global here; used sibling's node_modules via NODE_PATH, or `npm install pptxgenjs` locally).**
+- **r07 = FINAL iteration. BOOK COMPLETE: 16 chapters + 14 verified examples + 26 figures + bibliography + Leanpub manuscript + companion deck.** After merge: tag r07.0, notes-only release. Nothing else planned (hub card already exists). Backlog only: feed the clang-tidy/coverage/CI tunings back to the lgtm-cpp skill (separate repo).
 
 ## Decisions carried into every iteration
 
