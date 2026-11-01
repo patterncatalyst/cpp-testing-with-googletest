@@ -27,6 +27,7 @@ it, and a README that verifies the behavior.
 | Chapter 12: Races and memory bugs | [`examples/12-sanitizers`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/12-sanitizers) | Three correct weight functions, each broken in the chapter to show UBSan (overflow), ASan (a dangling view), and TSan (a shared accumulator) catching it. |
 | Chapter 13: Deterministic and stress testing | [`examples/13-deterministic-and-stress`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/13-deterministic-and-stress) | A `QuoteCache` with injected time and a `choose_backup_carrier` with an injected seed, then stressed with `--gtest_repeat` and `--gtest_shuffle`. |
 | Chapter 14: Debugging a failing test with GDB | [`examples/14-debugging`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/14-debugging) | A tiered-rate function with a planted boundary bug, located under GDB with a conditional breakpoint, `print`, `next`, and `backtrace`. |
+| Chapter 15: Measuring coverage with llvm-cov | [`examples/15-coverage`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/15-coverage) | A four-branch late-fee function and a `coverage.sh` that instruments, runs, and reports line, region, and branch coverage; dropping a test shows the uncovered branch. |
 
 Chapters 1 and 2 build on the shared `examples/_template/` scaffold rather than a
 chapter-specific example. More examples appear here as each chapter ships.
