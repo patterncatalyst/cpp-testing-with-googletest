@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="'Red Hat Text', system-ui, sans-serif" role="img">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="am" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b8650a"/></marker></defs>
+<rect x="330" y="40" width="240" height="56" rx="9" fill="#fff8ef" stroke="#e8870c" stroke-width="2"/>
+<text x="450.0" y="66.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">ci.sh</text>
+<text x="450.0" y="83.0" font-size="11.5" fill="#555555" text-anchor="middle">the four stages, in order</text>
+<rect x="60" y="170" width="300" height="56" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="210.0" y="196.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">developer runs ./ci.sh</text>
+<text x="210.0" y="213.0" font-size="11.5" fill="#555555" text-anchor="middle">before pushing</text>
+<rect x="540" y="170" width="300" height="56" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="690.0" y="196.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">GitHub Actions runs it</text>
+<text x="690.0" y="213.0" font-size="11.5" fill="#555555" text-anchor="middle">on every push</text>
+<rect x="330" y="240" width="240" height="46" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="450.0" y="268.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">pinned toolchain, same result</text>
+<path d="M400,96 L210,170" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M500,96 L690,170" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M210,226 L400,262" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<path d="M690,226 L500,262" fill="none" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<text x="450" y="150" font-size="11" fill="#1d1d1d" text-anchor="middle">same stages, same order, same gate</text>
+</svg>
