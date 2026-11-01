@@ -24,6 +24,7 @@ it, and a README that verifies the behavior.
 | Chapter 9: GoogleMock fundamentals | [`examples/09-mocking-fundamentals`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/09-mocking-fundamentals) | A `Dispatcher` tested against a `MockCarrierGateway`: `MOCK_METHOD`, `EXPECT_CALL` with matchers and cardinalities, `Times(0)`, and `ON_CALL` background stubs. |
 | Chapter 10: Advanced mocking and testability | [`examples/10-advanced-mocking`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/10-advanced-mocking) | A `BookingService` with two injected collaborators: `InSequence` ordering, `NiceMock`/`StrictMock`, `SaveArg` capture, and a `FakeAuditLog`. |
 | Chapter 11: Testing threaded code | [`examples/11-testing-threads`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/11-testing-threads) | A thread-safe `ShipmentLedger` driven from many threads with a `std::latch` and `std::jthread`, plus `std::async` workers, asserting the aggregate. |
+| Chapter 12: Races and memory bugs | [`examples/12-sanitizers`](https://github.com/{{ site.github_username }}/{{ site.github_repo }}/tree/main/examples/12-sanitizers) | Three correct weight functions, each broken in the chapter to show UBSan (overflow), ASan (a dangling view), and TSan (a shared accumulator) catching it. |
 
 Chapters 1 and 2 build on the shared `examples/_template/` scaffold rather than a
 chapter-specific example. More examples appear here as each chapter ships.

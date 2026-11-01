@@ -1,0 +1,7 @@
+# Test code inherits the project .clang-tidy and relaxes one check.
+# GoogleTest fixtures expose their state as protected members so TEST_F bodies,
+# which derive from the fixture, can reach it. That is the framework's own idiom,
+# so cppcoreguidelines-non-private-member-variables-in-classes does not apply to
+# test code (it still applies to the shipping library under src/).
+InheritParentConfig: true
+Checks: "-cppcoreguidelines-non-private-member-variables-in-classes"
