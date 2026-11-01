@@ -39,7 +39,11 @@ is `unverified` until actually built and run on Fedora 44.
 ## r02 progress (branch `release/r02`)
 
 - **Ch6 Parameterized and typed tests** (`_docs/06-parameterized-and-typed-tests.md`) authored + Figure 6.1 (`06-parameterized-and-typed`), footer `verified`. New example `examples/06-parameterized-and-typed`: `TEST_P` over a `delivery_band` boundary table (5 rows, struct param + name generator -> `/w1`../w30001`) and `TYPED_TEST` of `clamp_non_negative<T>` over `Types<int,long,double>`; 11/11 on all 3 lanes. Covers `TestWithParam`/`GetParam`, `INSTANTIATE_TEST_SUITE_P` + generators (Values/ValuesIn/Range/Bool/Combine), typed fixtures + `this->`, type-parameterized (`TYPED_TEST_P`) as advanced, when-not-to.
-- **Next:** Ch7 (Death tests / exceptions / `std::expected`) with `examples/07-*`; note the death-test-under-ASan gotcha. Then Ch8 (modern C++20/23: concepts, ranges, coroutines). Then PR `release/r02` -> main.
+- **Ch7 Death tests, exceptions, and `std::expected`** (`_docs/07-death-tests-exceptions-and-expected.md`) authored + TWO figures (`07-failure-styles`, `07-death-test-fork`), footer `verified`. New example `examples/07-failure-paths`: `parse_weight` -> `std::expected`, `parse_weight_or_throw` (message checked via try/catch + `what()`), `remaining_capacity` with `assert` tested by `EXPECT_DEATH`; 8/8 all lanes incl. the death test (abort-based, single-threaded, so no sanitizer gotcha). ~2230 prose words.
+- **clang-tidy: disabled the whole `cppcoreguidelines-pro-bounds-*` profile** (opt-in; fights `operator[]` and `from_chars` pointer pairs) + `bugprone-suspicious-stringview-data-usage` (false-positive on two-pointer from_chars). Replaced the two individual pro-bounds disables. Re-synced `.clang-tidy` across examples 03-07. **Feed back to lgtm-cpp.**
+- **AI sidebar convention adopted (user request 2026-11-01):** one `> **AI sidebar.**` blockquote per chapter before "Build, run, observe" (the design-patterns-books convention), framed around how an LLM tends to write TESTS for the topic and what to check. Ch7 has one; retrofitting Ch1-6.
+- **WORD TARGET (user restated):** 2k prose floor, 2.5k soft upper, closer to 2.5k with more diagrams; value not padding. Code-heavy chapters earn the words with real content (design rationale, gotchas, a 2nd diagram).
+- **Next:** Ch8 (modern C++20/23: concepts, ranges, coroutines) with `examples/08-*`. Then PR `release/r02` -> main.
 
 ## Decisions carried into every iteration
 
