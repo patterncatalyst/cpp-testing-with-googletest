@@ -140,6 +140,8 @@ The binary filters with `--gtest_filter`, which takes a `suite.case` glob:
 
 Filtering also works at the suite level: `ctest -R BillableWeight` or `--gtest_filter='BillableWeight.*'` runs every case under the suite, which is how you re-run one component's tests without the rest of a larger project. Running one case keeps the loop tight: change the code, rerun the single failing case in well under a second, and run the full suite again only once it passes. CTest's `-R` is the right tool from a script or a CI job; `--gtest_filter` is the one to use when you're already running the binary under a debugger.
 
+> **AI sidebar.** An assistant usually gets a first test's mechanics right and its case selection wrong: three cases that exercise the same path, no boundary, and nothing for the failing input. It also reaches for `EXPECT_EQ` by reflex where the real check is an ordering or a thrown exception. Read its cases against the function's branches, not its line count, and ask whether the inputs actually land on different outcomes. If every case drives the same branch, the suite is one test written three times, and the gaps are exactly where a bug would hide.
+
 ## Build, run, observe
 
 Run the default lane:

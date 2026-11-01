@@ -146,6 +146,8 @@ Choosing fatal or non-fatal is independent of what you check: every row has both
 
 The first argument to `TEST` is the suite name, and every case here shares `SplitIntoShipments`. GoogleTest groups output by suite, runs and filters by suite, and reports `SplitIntoShipments.ReturnsNoShipmentsForZeroWeight` as the full identity of a case. Keeping one suite per unit under test is the convention: it keeps related cases together in the report and lets you run just that unit's tests with a single filter. That filter is the suite name from the previous chapter: `--gtest_filter='SplitIntoShipments.*'` or `ctest -R SplitIntoShipments` runs every case in this suite and nothing else. The cases stay independent of one another; the suite is a naming and grouping device, not shared state. When several cases need the same setup, that shared setup is what fixtures are for, which is the next chapter.
 
+> **AI sidebar.** Left to its own habits, an assistant picks `ASSERT` or `EXPECT` by rote rather than by whether the test can keep going, and it often makes everything an `ASSERT`, so the first failure hides the rest. It also tends to use `EXPECT_EQ` on C strings and on floating-point values, where `EXPECT_STREQ` and `EXPECT_NEAR` are the right tools. Check that a precondition the later lines depend on is the `ASSERT` and the ordinary checks are `EXPECT`, and that any string or float comparison uses the macro meant for it rather than a raw `==` that compares pointers or demands exact bits.
+
 ## Build, run, observe
 
 Run the default lane:

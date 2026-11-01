@@ -6,9 +6,12 @@
 # bugprone-easily-swappable-parameters is off: at its default minimum length of 2
 # it flags nearly every small numeric function in a teaching example, which would
 # force a struct onto signatures where two plain arguments read fine.
-# cppcoreguidelines-pro-bounds-avoid-unchecked-container-access is off: it flags
-# every operator[], including the ASSERT_EQ-guarded indexing this book teaches in
-# tests; bounds safety is covered in prose and under the sanitizer lanes instead.
+# cppcoreguidelines-pro-bounds-* (the whole bounds-safety profile) is off: it is an
+# opt-in profile that flags idiomatic standard-library code, every operator[] and
+# every pointer pair like std::from_chars(sv.data(), sv.data() + sv.size(), ...);
+# bounds safety is covered in prose and enforced by the ASan/UBSan lanes instead.
+# bugprone-suspicious-stringview-data-usage is off: it false-positives on the
+# two-pointer std::from_chars call, which does pass the end pointer.
 Checks: >
   bugprone-*,
   performance-*,
@@ -20,10 +23,10 @@ Checks: >
   -readability-identifier-length,
   -cppcoreguidelines-avoid-magic-numbers,
   -readability-magic-numbers,
-  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-bounds-*,
   -cppcoreguidelines-avoid-const-or-ref-data-members,
   -bugprone-easily-swappable-parameters,
-  -cppcoreguidelines-pro-bounds-avoid-unchecked-container-access
+  -bugprone-suspicious-stringview-data-usage
 
 WarningsAsErrors: '*'
 HeaderFilterRegex: '^(src|include)/'

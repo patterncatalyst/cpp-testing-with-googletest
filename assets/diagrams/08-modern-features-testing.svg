@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 320" font-family="'Red Hat Text', system-ui, sans-serif" role="img">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="am" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b8650a"/></marker></defs>
+<rect x="40" y="64" width="250" height="56" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="90.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">concept Weighable</text>
+<text x="165.0" y="107.0" font-size="11.5" fill="#555555" text-anchor="middle">constrains a template</text>
+<rect x="350" y="64" width="250" height="56" rx="9" fill="#fff8ef" stroke="#e8870c" stroke-width="2"/>
+<text x="475.0" y="90.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">checked when it compiles</text>
+<text x="475.0" y="107.0" font-size="11.5" fill="#555555" text-anchor="middle">a bad type is rejected</text>
+<rect x="660" y="64" width="290" height="56" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="805.0" y="97.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">static_assert, constexpr bool</text>
+<rect x="40" y="144" width="250" height="56" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="170.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">ranges pipeline</text>
+<text x="165.0" y="187.0" font-size="11.5" fill="#555555" text-anchor="middle">filter then transform</text>
+<rect x="350" y="144" width="250" height="56" rx="9" fill="#fff8ef" stroke="#e8870c" stroke-width="2"/>
+<text x="475.0" y="170.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">lazy, fold_left pulls once</text>
+<text x="475.0" y="187.0" font-size="11.5" fill="#555555" text-anchor="middle">nothing runs until folded</text>
+<rect x="660" y="144" width="290" height="56" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="805.0" y="177.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">materialize, EXPECT_EQ the value</text>
+<rect x="40" y="224" width="250" height="56" rx="9" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+<text x="165.0" y="250.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">generator coroutine</text>
+<text x="165.0" y="267.0" font-size="11.5" fill="#555555" text-anchor="middle">co_yield each value</text>
+<rect x="350" y="224" width="250" height="56" rx="9" fill="#fff8ef" stroke="#e8870c" stroke-width="2"/>
+<text x="475.0" y="250.0" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">lazy, resumed on demand</text>
+<text x="475.0" y="267.0" font-size="11.5" fill="#555555" text-anchor="middle">may never terminate</text>
+<rect x="660" y="224" width="290" height="56" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="805.0" y="257.5" font-size="13.5" font-weight="700" fill="#111111" text-anchor="middle">collect yielded values, or take(n)</text>
+<path d="M290,92 L350,92" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M600,92 L660,92" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,172 L350,172" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M600,172 L660,172" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M290,252 L350,252" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<path d="M600,252 L660,252" fill="none" stroke="#b8650a" stroke-width="2" marker-end="url(#am)"/>
+<text x="165" y="40" font-size="11" fill="#1d1d1d" text-anchor="middle">feature</text>
+<text x="475" y="40" font-size="11" fill="#1d1d1d" text-anchor="middle">when it runs</text>
+<text x="805" y="40" font-size="11" fill="#1d1d1d" text-anchor="middle">how you test it</text>
+</svg>

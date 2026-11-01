@@ -73,12 +73,21 @@ Not used here: `lgtm-podman-stack` / `lgtm-docker-stack` (no containers) and
 
 1. Front matter: `title`, `order`, `part`, `description`, `duration`. `part:` must
    exactly equal a `_parts` file's `part_name` (case + spacing). Quote any value with a colon.
-2. Chapter spine: hook → diagram → concept → how the code works → build/run/observe →
-   cross-check → what you learned → verification status.
-3. Depth: 1,900–2,500 words of PROSE (excluding code, captions, command output).
-   "How the code works" walks every meaningful call as if the reader were writing it.
-4. Reference example files by full path: `examples/NN-name/file`.
-5. One runnable example + at least one paired SVG + `.excalidraw` figure per hands-on chapter.
+2. Chapter spine: learning objectives → diagram → why this matters → concept → how the
+   code works → **AI sidebar** → build/run/observe → cross-check → what you learned →
+   for deeper coverage → verification status.
+3. Depth: **2,000-word PROSE floor, 2,500 soft target** (excluding code, captions, and
+   command output; the AI sidebar, learning-objective bullets, and summary bullets count
+   as prose). Lean toward 2,500 as a chapter earns it, and the more diagrams, the closer
+   to 2,500. Value, never padding. `scan.sh --stats` undercounts because it omits bullets
+   and blockquotes; a true prose count (code and diagrams removed) is the measure.
+4. **AI sidebar (every chapter):** one `> **AI sidebar.**` blockquote placed just before
+   "Build, run, observe", on how an LLM pairing partner tends to write tests for the
+   chapter's topic and what to check in what it returns. The design-patterns-books
+   convention; keep it to one per chapter, no section heading.
+5. Reference example files by full path: `examples/NN-name/file`.
+6. One runnable example + at least one paired SVG + `.excalidraw` figure per hands-on chapter;
+   a chapter covering several distinct mechanisms earns a second figure.
 
 ## Diagrams
 

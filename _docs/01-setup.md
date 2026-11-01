@@ -160,6 +160,8 @@ Local tools leave nothing running between sessions, so there's no service to sto
 [host]$ conan remove "*" --confirm   # optional: clears the cached GoogleTest
 ```
 
+> **AI sidebar.** Ask an assistant to "set up a C++ test project" and it tends to reach for whatever it saw most often: GoogleTest pulled in with CMake's `FetchContent`, a bare `CMakeLists.txt` with no presets, and, as often as not, a `Dockerfile` you never asked for. Check three things before accepting it. The versions it pins should be real and current rather than a plausible-looking guess; it should not add a second test framework alongside GoogleTest; and it should match this book's shape, Conan-pinned `gtest`, CMake presets, and no container. A `Dockerfile` or an unpinned dependency is the usual sign it reached for a generic template instead of your setup.
+
 ## What you learned
 
 - The six-tool local toolchain this book builds on, what each tool is for, and the exact versions it is verified against on Fedora 44.
