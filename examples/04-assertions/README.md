@@ -1,4 +1,4 @@
-# 04-assertions — ASSERT vs EXPECT
+# 04-assertions: ASSERT vs EXPECT
 
 The example for Chapter 4. `shipping::split_into_shipments` divides a total weight
 into shipments no heavier than a per-shipment maximum, returning a
@@ -14,7 +14,7 @@ size, then expect each element.
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # consolidation.hpp / consolidation.cpp
-└── tests/                # consolidation_test.cpp — ASSERT_EQ, EXPECT_EQ, EXPECT_TRUE, EXPECT_THROW
+└── tests/                # consolidation_test.cpp: ASSERT_EQ, EXPECT_EQ, EXPECT_TRUE, EXPECT_THROW
 ```
 
 ## Run it

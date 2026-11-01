@@ -1,4 +1,4 @@
-# 14-debugging — debugging a failing test under GDB
+# 14-debugging: debugging a failing test under GDB
 
 The example for Chapter 14. `shipping::tiered_cost_cents` charges by weight tier,
 and `batch_cost_cents` sums the tiers across a batch. Both are small enough to step
@@ -12,8 +12,8 @@ and `backtrace`.
 14-debugging/
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target (Debug: -g)
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
-├── src/shipping/         # rates.hpp / rates.cpp — tiered_cost_cents, batch_cost_cents
-└── tests/                # rates_test.cpp — one case per tier boundary
+├── src/shipping/         # rates.hpp / rates.cpp: tiered_cost_cents, batch_cost_cents
+└── tests/                # rates_test.cpp: one case per tier boundary
 ```
 
 ## Run it

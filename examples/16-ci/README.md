@@ -1,4 +1,4 @@
-# 16-ci — the test matrix, run the same way locally and in CI
+# 16-ci: the test matrix, run the same way locally and in CI
 
 The example for Chapter 16. A small `delivery_zone` lookup stands in for the code
 under test; the subject is the pipeline around it. `ci.sh` runs the whole matrix,
@@ -10,7 +10,7 @@ the GitHub Actions translation of the same four stages.
 ```
 16-ci/
 ├── CMakeLists.txt        # the usual lanes plus an ENABLE_COVERAGE option
-├── demo.sh               # ./demo.sh [test|build|asan|tsan] — one lane
+├── demo.sh               # ./demo.sh [test|build|asan|tsan]: one lane
 ├── ci.sh                 # the full matrix: default, asan, tsan, coverage gate
 ├── coverage.sh           # instrumented build + llvm-cov, gated at MIN_COVERAGE
 ├── workflows/tests.yml   # the GitHub Actions workflow (copy to .github/workflows/)

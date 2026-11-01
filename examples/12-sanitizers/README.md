@@ -1,4 +1,4 @@
-# 12-sanitizers — reading what ASan, UBSan, and TSan report
+# 12-sanitizers: reading what ASan, UBSan, and TSan report
 
 The example for Chapter 12. Three small, correct functions over a batch of parcel
 weights, each written to stay inside the rules a sanitizer enforces:
@@ -18,8 +18,8 @@ on a shared unsynchronized accumulator.
 12-sanitizers/
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests; links Threads::Threads
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
-├── src/shipping/         # weights.hpp / weights.cpp — total, max, and parallel sum
-└── tests/                # weights_test.cpp — the correct behavior on all lanes
+├── src/shipping/         # weights.hpp / weights.cpp: total, max, and parallel sum
+└── tests/                # weights_test.cpp: the correct behavior on all lanes
 ```
 
 ## Run it

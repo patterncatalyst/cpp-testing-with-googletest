@@ -1,4 +1,4 @@
-# 05-fixtures — TEST_F, SetUp, and shared state
+# 05-fixtures: TEST_F, SetUp, and shared state
 
 The example for Chapter 5. `shipping::Manifest` accumulates the parcels loaded for
 one truck and reports their count and combined weight. Several tests want to start

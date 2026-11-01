@@ -1,4 +1,4 @@
-# 11-testing-threads — driving a thread-safe unit from a test
+# 11-testing-threads: driving a thread-safe unit from a test
 
 The example for Chapter 11. `shipping::ShipmentLedger` is a thread-safe accumulator:
 many threads call `record` at once, and a mutex keeps `count` and `total_grams`
@@ -17,8 +17,8 @@ concurrency must preserve.
 11-testing-threads/
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests; links Threads::Threads
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
-├── src/shipping/         # ledger.hpp / ledger.cpp — a mutex-protected accumulator
-└── tests/                # ledger_test.cpp — latch, jthread, async/future
+├── src/shipping/         # ledger.hpp / ledger.cpp: a mutex-protected accumulator
+└── tests/                # ledger_test.cpp: latch, jthread, async/future
 ```
 
 ## Run it
@@ -26,7 +26,7 @@ concurrency must preserve.
 ```
 [host]$ ./demo.sh test     # default lane: configure, build, ctest
 [host]$ ./demo.sh asan     # AddressSanitizer + UndefinedBehaviorSanitizer
-[host]$ ./demo.sh tsan     # ThreadSanitizer — the important lane for threaded code
+[host]$ ./demo.sh tsan     # ThreadSanitizer: the important lane for threaded code
 ```
 
 ## What it verifies

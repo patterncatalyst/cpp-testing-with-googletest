@@ -1,4 +1,4 @@
-# 15-coverage — measuring coverage with llvm-cov
+# 15-coverage: measuring coverage with llvm-cov
 
 The example for Chapter 15. `shipping::late_fee_cents` has four branches (not late, a
 member grace, a per-day fee, and a cap), so there is something for coverage to
@@ -12,8 +12,8 @@ line, region, and branch report with llvm-cov.
 ├── CMakeLists.txt        # adds an ENABLE_COVERAGE option alongside the sanitizer lanes
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── coverage.sh           # build instrumented, run, and report with llvm-cov
-├── src/shipping/         # late_fee.hpp / late_fee.cpp — a four-branch fee
-└── tests/                # late_fee_test.cpp — one case per branch
+├── src/shipping/         # late_fee.hpp / late_fee.cpp: a four-branch fee
+└── tests/                # late_fee_test.cpp: one case per branch
 ```
 
 ## Run it

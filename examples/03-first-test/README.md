@@ -1,4 +1,4 @@
-# 03-first-test — your first GoogleTest suite
+# 03-first-test: your first GoogleTest suite
 
 The example for Chapter 3. A single small function, `shipping::billable_weight_grams`,
 and the first test file written against it from scratch. It is the `_template`
@@ -13,8 +13,8 @@ is the build wiring plus the code that matters.
 ├── CMakeLists.txt        # builds the shipping lib + unit_tests target
 ├── CMakePresets.json     # default · asan-ubsan · tsan · release
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
-├── src/shipping/         # parcel.hpp / parcel.cpp — the code under test
-└── tests/                # parcel_test.cpp — the three TEST cases
+├── src/shipping/         # parcel.hpp / parcel.cpp: the code under test
+└── tests/                # parcel_test.cpp: the three TEST cases
 ```
 
 ## Run it

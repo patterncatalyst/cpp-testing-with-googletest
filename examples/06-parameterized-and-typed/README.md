@@ -1,4 +1,4 @@
-# 06-parameterized-and-typed — one body, many inputs and many types
+# 06-parameterized-and-typed: one body, many inputs and many types
 
 The example for Chapter 6. It shows the two GoogleTest tools for running one test
 body many times: `TEST_P` over a list of inputs, and `TYPED_TEST` over a list of
@@ -17,7 +17,7 @@ types.
 ├── demo.sh               # ./demo.sh [test|build|asan|tsan]
 ├── src/shipping/         # delivery_band.hpp/.cpp (TEST_P subject)
 │                         # clamp.hpp (header-only template, TYPED_TEST subject)
-└── tests/                # measures_test.cpp — TEST_P + TYPED_TEST
+└── tests/                # measures_test.cpp: TEST_P + TYPED_TEST
 ```
 
 ## Run it

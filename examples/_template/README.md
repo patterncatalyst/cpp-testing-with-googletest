@@ -1,4 +1,4 @@
-# _template — the example scaffold
+# _template: the example scaffold
 
 Every runnable example in this book is a copy of this directory with the code
 under test and its tests filled in. It is a minimal, working GoogleTest project:
