@@ -2,7 +2,13 @@
 # A lint finding fails the build (WarningsAsErrors: '*'). Run through CMake
 # (CMAKE_CXX_CLANG_TIDY) or standalone with: run-clang-tidy -p build
 #
-# Noisy or opinionated checks are disabled explicitly with a trailing reason.
+# Noisy or opinionated checks are disabled explicitly.
+# bugprone-easily-swappable-parameters is off: at its default minimum length of 2
+# it flags nearly every small numeric function in a teaching example, which would
+# force a struct onto signatures where two plain arguments read fine.
+# cppcoreguidelines-pro-bounds-avoid-unchecked-container-access is off: it flags
+# every operator[], including the ASSERT_EQ-guarded indexing this book teaches in
+# tests; bounds safety is covered in prose and under the sanitizer lanes instead.
 Checks: >
   bugprone-*,
   performance-*,
@@ -15,7 +21,9 @@ Checks: >
   -cppcoreguidelines-avoid-magic-numbers,
   -readability-magic-numbers,
   -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
-  -cppcoreguidelines-avoid-const-or-ref-data-members
+  -cppcoreguidelines-avoid-const-or-ref-data-members,
+  -bugprone-easily-swappable-parameters,
+  -cppcoreguidelines-pro-bounds-avoid-unchecked-container-access
 
 WarningsAsErrors: '*'
 HeaderFilterRegex: '^(src|include)/'
