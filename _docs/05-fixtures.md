@@ -159,6 +159,8 @@ A fixture isn't free, and not every suite needs one. When each case builds diffe
 
 One pitfall recurs: setup that creeps back into the bodies. When most cases open with the same few lines, those lines belong in `SetUp` or a helper, not copied into each body where they drift apart over time. A fixture only pays off while the shared arrangement actually lives in it.
 
+> **AI sidebar.** An assistant reaches for a fixture by reflex, wrapping even unrelated cases in a `TEST_F` that shares nothing, and it will sometimes build state in `SetUp` that only half the cases use. Ask whether the cases start from the same place. If a fixture's `SetUp` prepares things several cases ignore, plain `TEST` cases are clearer, and a fixture whose members are read by one case out of five is a sign the shared state was assumed, not needed. A fixture is worth it when it removes real duplication, not when it just looks organized.
+
 ## Build, run, observe
 
 Run the default lane:

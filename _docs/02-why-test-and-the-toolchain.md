@@ -154,6 +154,8 @@ The last two lines are the ones worth slowing down on. `include(GoogleTest)` loa
 
 `examples/_template/tests/rate_quote_test.cpp` includes `<gtest/gtest.h>`, includes the library header, and puts its tests in an anonymous namespace. That namespace matters more than it looks. GoogleTest links every test file into one binary, so two files that each defined a file-scope helper named `make_parcel` would collide at link time; wrapping each file's helpers in an unnamed namespace gives them internal linkage and sidesteps the clash. Each `TEST(RateQuote, Name)` macro expands to a registered test function; the first argument is the suite name, the second is the case name, and the two together are what CTest reports. The macro hides a fair amount: it declares a class derived from GoogleTest's test fixture, puts your body in that class's `TestBody` method, and registers an instance with the global test registry before `main` runs. That registration is how the `main` from `GTest::gtest_main` finds and runs a test the file never explicitly called. You write the behavior; the macro handles the bookkeeping.
 
+> **AI sidebar.** Asked to "add tests" to existing code, an assistant writes happy-path cases that assert the obvious and skip the edges, and it often checks that a call ran rather than that its result is right. The question to put to any suite it hands back is the one this chapter turns on: would a single case fail if the function were subtly wrong? Try it directly. Break the code the way this chapter does and see which generated tests go red. A suite that stays green against a broken version is asserting nothing that matters, however many cases it has.
+
 ## Build, run, observe
 
 Run the default lane from the example directory:

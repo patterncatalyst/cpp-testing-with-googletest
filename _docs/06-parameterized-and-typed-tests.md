@@ -152,6 +152,8 @@ Because a typed body is compiled once per type in the list, a type that fails to
 
 There is a third form, covered here only in brief. Type-parameterized tests, written with `TYPED_TEST_P` and registered with `REGISTER_TYPED_TEST_SUITE_P`, let you define a suite of typed tests in one place and apply it to type lists supplied elsewhere, which matters when you ship a concept and want its implementers to reuse your conformance tests. Reach for it when that need appears; the plain `TYPED_TEST` here covers the common case.
 
+> **AI sidebar.** Give an assistant a function with many cases and it will sometimes parameterize cleanly and sometimes paste a dozen near-identical `TEST`s; asked to parameterize, it may force cases with different assertions into one body with a branch keyed on the parameter. Check that a parameterized body is identical across rows, with only the data changing, and that a typed test's type list includes the types that actually behave differently, not just the one the code was written against. A branch inside a `TEST_P` body that switches on the parameter is the tell that two tests were merged into one.
+
 ## Build, run, observe
 
 Run the default lane:
